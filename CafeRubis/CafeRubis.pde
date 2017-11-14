@@ -4,11 +4,15 @@ Student number: C16736885
 */
 
 Table table;
+Product p1;
 
 void setup(){
   size(800,600);
-  table = loadTable("cafe.csv", "header");
+  p1 = new Product();
 
+}
+
+void draw() {;
 }
 
 class Product {
@@ -16,7 +20,12 @@ class Product {
   float price;
   
   
-  Product(){
-    println("test");
+  Product(TableRow tr){
+    name = tr.setString("Name");
+    price = tr.setFloat("Price");
   }
+}
+
+void loadData(){
+  table = loadTable("cafe.csv", "header");
 }
